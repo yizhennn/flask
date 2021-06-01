@@ -1,7 +1,7 @@
 #virtualenv flask
 #cd flask
 #source bin/activate
-#python app.py#####
+#python app.py
 
 from flask import Flask,render_template
 from flask_bootstrap import Bootstrap
