@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if title %}
+    <title>{{ title }}</title>
+
+    {% else %}
+    <title>flask app</title>
+    {% endif %}
+</head>
+<body>
+    <h1>
+        Hi index:Hi! 2nd day from learning flask 
+
+    
+
+    {% block content%}
+    <h1>parent template</h1>
+    {% endblock %}
+
+</body>
+</html>
