@@ -5,16 +5,23 @@
 
 from flask import Flask,render_template
 from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app=Flask(__name__)
 bootstrap= Bootstrap(app)
+db = SQLAlchemy(app)
+
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
 
 
 @app.route("/")
 def home():
     paragraphs=['s1', 's2', 's3' ]
     #title = "Flask Web App"
-    return render_template('index.html',title="河馬",data=paragraphs)
+    return render_template('index.html',title="miss hippo",data=paragraphs)
 
 @app.route("/test")
 def test():
